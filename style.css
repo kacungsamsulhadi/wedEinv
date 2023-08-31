@@ -481,7 +481,7 @@ body {
 }
 
 /* mobile s */
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -512,5 +512,18 @@ body {
   .sticky-top {
     overflow: hidden;
   }
-  
+  .timeline li .timeline-panel {
+    width: 60%;
+    transform: translateX(-20px);
+  }
+  .timeline li .timeline-image {
+    width: 65px;
+    height: 65px;
+  }
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+  .timeline li .timeline-panel::after {
+    top: 31px;
+  }
 }
