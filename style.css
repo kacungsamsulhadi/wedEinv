@@ -25,7 +25,6 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
-  /* background-color: var(--bg); */
 }
 
 .hero h1 {
@@ -55,7 +54,7 @@ body {
 .hero a:hover {
   color: var(--bg);
   background-color: var(--pink);
-  color: white; /* For browsers that do not support gradients */
+  color: white;
 }
 
 .mynavbar {
@@ -93,17 +92,12 @@ body {
     font-size: 3rem;
     color: var(--pink);
     font-weight: bold;
-    /* text-align: center; */
-    /* margin-bottom: 2rem; */
 }
 
 .home h3 {
-    /* font-family: "Sacramento", cursive; */
+    font-family: "Sacramento", cursive;
     color: #444
     font-size: 1.5rem;
-    /* color: var(--pink); */
-    /* font-weight: bold; */
-    /* text-align: center; */
     margin-bottom: 1rem;
 }
 
@@ -175,7 +169,6 @@ body {
 
 .info .card-body {
   font-size: 1rem;
-  /* border-bottom: 1px solid #999; */
 }
 
 .info .card-footer {
@@ -210,7 +203,6 @@ body {
     font-size: 100%;
   }
   .img1 {
-    /* display: none; */
     width: 30%;
     margin: 0px 0px 10px;
   }
@@ -238,16 +230,13 @@ body {
   }
   .hero h4 {
     font-size: 1.8rem;
-    /* margin-bottom: 20px; */
   }
   .hero a {
     font-size: 1.8rem;
-    /* margin-top: 20px; */
   }
   .hero a:hover {
     font-size: 1.8rem;
   }
-
   .img1 {
     width: 50%;
     margin-top: 10px;
@@ -279,7 +268,6 @@ body {
   .hero a:hover {
     font-size: 1.5rem;
   }
-
   .img1 {
     width: 50%;
     margin-top: 10px;
@@ -292,9 +280,11 @@ body {
     background-color: var(--bg);
   }
   .mynavbar .nav-link {
-    /* text-transform: uppercase; */
     font-size: 2rem;
     text-align: center;
+  }
+  .sticky-top {
+    overflow: hidden;
   }
 }
 
@@ -317,7 +307,6 @@ body {
   }
 
   .img1 {
-    /* display: none; */
     width: 70%;
     margin-top: 10px;
   }
@@ -327,6 +316,9 @@ body {
     padding: 30px;
     margin: 4px;
     background-color: var(--bg);
+  }
+  .sticky-top {
+    overflow: hidden;
   }
 }
 
@@ -347,7 +339,6 @@ body {
   .hero a:hover {
     font-size: 0.8rem;
   }
-
   .img1 {
     width: 70%;
     margin-top: 10px;
@@ -359,5 +350,8 @@ body {
     margin: 5px;
     font-size: 1rem;
     background-color: var(--bg);
+  }
+  .sticky-top {
+    overflow: hidden;
   }
 }
