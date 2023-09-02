@@ -298,7 +298,8 @@
     </div>
 
     <form method="POST"
-      action="https://script.google.com/macros/s/AKfycbz-oAbsNFnGPWL3g8_MjNhBP_BohorTFoDgoaGhpal9-trjunbUTJvr3rtkfLblbw00BA/exec" id="my-form">
+      action="https://script.google.com/macros/s/AKfycbz-oAbsNFnGPWL3g8_MjNhBP_BohorTFoDgoaGhpal9-trjunbUTJvr3rtkfLblbw00BA/exec"
+      id="my-form">
       <div class="container p-3">
         <div class="row g-3">
           <div class="col-md">
@@ -394,13 +395,13 @@
     const rootElement = document.querySelector(':root');
 
     function disableScroll() {
-      scrollTop = window.pageYOffset && document.documentElement.scrollTop;
-      scrollLeft = window.pageXOffset && document.documentElement.scrollLeft;
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
       window.onscroll = function () {
         window.scrollTo(screenTop, screenLeft);
       }
-      rootElement.style.scrollBehavior = 'auto';
+      rootElement.style.scrollBehavior = 'unset';
     }
 
     function enableScroll() {
