@@ -550,7 +550,7 @@ body {
   }
   .hero h4 {
     font-size: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .hero a {
     font-size: 0.8rem;
@@ -587,5 +587,8 @@ body {
   }
   .timeline li .timeline-panel::after {
     top: 31px;
+  }
+  .hero::before {
+    background-size: auto;
   }
 }
