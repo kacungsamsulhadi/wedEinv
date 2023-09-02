@@ -35,7 +35,7 @@
       <div class="simply-countdown mb-2"></div>
       <!-- <h4>Kepada Bapak/Ibu/Saudara/i,</h4> -->
       <!-- <h4 class="mt-2">Mas x</h4> -->
-      <a href="#home" class="btn btn-lg">Lihat undangan</a>
+      <a href="#home" class="btn btn-lg" onclick="enableScroll()">Lihat undangan</a>
     </main>
   </section>
 
@@ -246,14 +246,12 @@
           </a>
         </div>
         <div class="col mt-3">
-          <a href="https://picsum.photos/id/25/1200/768" data-toggle="lightbox"
-            data-caption="This describes the image">
+          <a href="https://picsum.photos/id/25/1200/768" data-toggle="lightbox" data-caption="This describes the image">
             <img src="https://picsum.photos/id/25/300/400" alt="empat" class="img-fluid w-100 rounded">
           </a>
         </div>
         <div class="col mt-3">
-          <a href="https://picsum.photos/id/28/1200/768" data-toggle="lightbox"
-            data-caption="This describes the image">
+          <a href="https://picsum.photos/id/28/1200/768" data-toggle="lightbox" data-caption="This describes the image">
             <img src="https://picsum.photos/id/28/300/400" alt="empat" class="img-fluid w-100 rounded">
           </a>
         </div>
@@ -276,16 +274,70 @@
           </a>
         </div>
         <div class="col mt-3">
-          <a href="https://picsum.photos/id/26/1200/768" data-toggle="lightbox"
-            data-caption="This describes the image">
+          <a href="https://picsum.photos/id/26/1200/768" data-toggle="lightbox" data-caption="This describes the image">
             <img src="https://picsum.photos/id/26/300/400" alt="empat" class="img-fluid w-100 rounded">
           </a>
         </div>
         <div class="col mt-3">
-          <a href="https://picsum.photos/id/2/1200/768" data-toggle="lightbox"
-            data-caption="This describes the image">
+          <a href="https://picsum.photos/id/2/1200/768" data-toggle="lightbox" data-caption="This describes the image">
             <img src="https://picsum.photos/id/2/300/400" alt="empat" class="img-fluid w-100 rounded">
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="rsvp">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2>Konfirmasi Kehadiran</h2>
+          <p>Isi form dibawah untuk konfirmasi kehadiran</p>
+        </div>
+      </div>
+    </div>
+
+    <form method="POST"
+      action="https://script.google.com/macros/s/AKfycbz-oAbsNFnGPWL3g8_MjNhBP_BohorTFoDgoaGhpal9-trjunbUTJvr3rtkfLblbw00BA/exec" id="my-form">
+      <div class="container p-3">
+        <div class="row g-3">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="nama" class="form-control" id="nama" name="nama" placeholder="Silahkan masukkan nama anda">
+              <label for="nama">Nama</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <select class="form-select" id="status" name="status">
+                <option selected>Silahkan pilih</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+              </select>
+              <label for="floatingTextarea2">Konfirmasi</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating mt-3">
+          <textarea class="form-control" placeholder="Leave a comment here" name="keterangan" id="keterangan"
+            style="height: 200px"></textarea>
+          <label for="keterangan">Keterangan</label>
+        </div>
+        <div class="col-md w-100 h-100 mx-auto text-center d-flex justify-content-center align-items-center mt-3">
+          <button type="submit" class="btn btn-primary">Kirim</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section id="gifts" class="gifts">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Ungkapan tanda kasih</span>
+          <h2>Gifts</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, facere reiciendis. Dicta obcaecati debitis
+            facilis.</p>
         </div>
       </div>
     </div>
@@ -324,6 +376,50 @@
 
     offcanvas.addEventListener('hidden.bs.offcanvas', function () {
       stickyTop.style.overflow = 'hidden';
+    });
+  </script>
+
+  <!-- disable scroll -->
+  <script>
+    const rootElement = document.querySelector(':root');
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(screenTop, screenLeft);
+      }
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll() {
+      window.onscroll = function () { };
+      rootElement.style.scrollBehavior = 'smooth';
+      // local storage open once
+      localStorage.setItem('opened', true);
+    }
+    if (!localStorage.getItem('opened')) {
+      disableScroll();
+    }
+  </script>
+
+  <!-- intercept -->
+  <script>
+    window.addEventListener("load", function () {
+      const form = document.getElementById('my-form');
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const action = e.target.action;
+        fetch(action, {
+          method: 'POST',
+          body: data,
+        })
+          .then(() => {
+            alert("Terimakasih telah mengisi form konfirmasi kehadiran.");
+          })
+      });
     });
   </script>
 </body>
