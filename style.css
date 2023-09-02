@@ -540,6 +540,61 @@ body {
   .timeline li .timeline-panel::after {
     top: 31px;
   }
+  .hero::before {
+    background-size: auto;
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* mobile l */
+@media (max-width: 425px) {
+  .hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 5px;
+  }
+  .hero h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  .hero a {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+  .hero a:hover {
+    font-size: 0.8rem;
+  }
+  .img1 {
+    width: 50%;
+    margin-top: 10px;
+  }
+  .simply-countdown > .simply-section {
+    width: 10px;
+    height: 10px;
+    padding: 25px;
+    margin: 5px;
+    font-size: 1rem;
+    background-color: var(--bg);
+  }
+  .sticky-top {
+    overflow: hidden;
+  }
+  .timeline li .timeline-panel {
+    width: 60%;
+    transform: translateX(-20px);
+  }
+  .timeline li .timeline-image {
+    width: 65px;
+    height: 65px;
+  }
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+  .timeline li .timeline-panel::after {
+    top: 31px;
+  }
+  .hero::before {
+    background-size: auto;
+  }
 }
 
 /* mobile s */
