@@ -19,7 +19,8 @@ body {
   height: 100%;
   background-image: url(img/bg.jpg);
   background-size: cover;
-  z-index: -1;
+  z-index: -1;  
+  filter: brightness(0.5);
 }
 
 .hero {
@@ -375,53 +376,28 @@ body {
   }
 }
 
-/* desktop */
-@media (max-width: 1440px) {
-  html {
-    font-size: 100%;
-  }
-  .img1 {
-    width: 30%;
-    margin: 0px 0px 10px;
-  }
-  .simply-countdown > .simply-section {
-    width: 100px;
-    height: 60px;
-    padding: 30px;
-    margin: 5px;
-    background-color: var(--bg);
-  }
-}
-
 /* xl */
-@media (max-width: 1200px) {
-  .home .heart {
-    transform: translateX(-50%) translateY(60px);
-  }
-}
-
-/* lepi */
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
   .hero h1 {
-    font-size: 5.5rem;
-    margin-bottom: 20px;
+    font-size: 4.5rem;
+    font-weight: bold;
   }
   .hero h4 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;    
   }
   .hero a {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   .hero a:hover {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   .img1 {
-    width: 50%;
-    margin-top: 10px;
+    width: 25%;
+    margin-top: 5px;
   }
   .simply-countdown > .simply-section {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 40px;
     padding: 30px;
     margin: 5px;
     background-color: var(--bg);
@@ -457,26 +433,95 @@ body {
     width: 130px;
     height: 130px;
   }
+  .home .heart {
+    transform: translateX(-50%) translateY(60px);
+  }
+  .hero::before {
+    background-size: auto;
+  }
+}
+
+/* lepi */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 5px;
+  }
+  .hero h4 {
+    font-size: 1.5rem;
+  }
+  .hero a {
+    font-size: 1.3rem;
+  }
+  .hero a:hover {
+    font-size: 1.3rem;
+  }
+  .img1 {
+    width: 20%;
+    margin-top: 5px;
+  }
+  .simply-countdown > .simply-section {
+    width: 60px;
+    height: 30px;
+    padding: 25px;
+    margin: 5px;
+    background-color: var(--bg);
+  }
+  .home .heart {
+  display: none;
+  }
+  .timeline::before {
+    left: 60px;
+  }
+  .timeline li .timeline-image {
+  left: 15px;
+  margin-left: 45px;
+  top: 16px;
+  }
+  .timeline li .timeline-panel {
+    width: calc(100% - 200px);
+    float: right;
+  }
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
+  .timeline li .timeline-image {
+    width: 130px;
+    height: 130px;
+  }
+  .hero::before {
+    background-size: cover;
+    backdrop-filter: blur(2px);
+  }
 }
 
 /* tablet */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
   .hero h4 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   .hero a {
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    margin-top: 5px;
   }
   .hero a:hover {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .img1 {
-    width: 50%;
-    margin-top: 10px;
+    width: 20%;
+    margin-top: 5px;
   }
   .simply-countdown > .simply-section {
     width: 90px;
@@ -491,6 +536,10 @@ body {
   }
   .sticky-top {
     overflow: hidden;
+  }
+  .hero::before {
+    background-size: cover;
+    backdrop-filter: blur(2px);
   }
 }
 
@@ -557,11 +606,11 @@ body {
     margin-bottom: 5px;
   }
   .hero a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: 5px;
   }
   .hero a:hover {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .img1 {
     width: 50%;
