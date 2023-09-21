@@ -80,7 +80,7 @@ body {
 }
 
 .home {
-    background-image: url(img/floral.png);
+    background-image: url(img/bgg.jpg);
     background-size: cover;
     min-height: 100vh;
     margin-top: -6rem;
@@ -620,7 +620,7 @@ footer li {
   }
 
   .img1 {
-    width: 70%;
+    width: 40%;
     margin-top: 10px;
   }
   .simply-countdown > .simply-section {
@@ -732,7 +732,7 @@ footer li {
     font-size: 0.8rem;
   }
   .img1 {
-    width: 50%;
+    width: 60%;
     margin-top: 10px;
   }
   .simply-countdown > .simply-section {
